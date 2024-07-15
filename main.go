@@ -25,7 +25,7 @@ func SubmitFormHandle(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	static := http.FileServer(http.Dir("./static/"))
+	static := http.FileServer(http.Dir("./static"))
 	http.Handle("/static", http.StripPrefix("/static", static))
 
 	http.HandleFunc("/", MainPageHandle)
